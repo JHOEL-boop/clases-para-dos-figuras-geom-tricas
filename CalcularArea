@@ -1,0 +1,71 @@
+using System;
+
+// Clase Circulo que encapsula el tipo de dato primitivo double
+public class Circulo
+{
+    // Atributo privado: solo la clase puede acceder a él
+    private double radio;
+
+    // Constructor: permite crear un círculo enviando su radio
+    public Circulo(double radio)
+    {
+        this.radio = radio;
+    }
+
+    // CalcularArea es una función que devuelve un valor double.
+    // Calcula el área de un círculo usando la fórmula: π * radio^2
+    public double CalcularArea()
+    {
+        return Math.PI * radio * radio;
+    }
+
+    // CalcularPerimetro es una función que devuelve un valor double.
+    // Calcula el perímetro de un círculo usando la fórmula: 2 * π * radio
+    public double CalcularPerimetro()
+    {
+        return 2 * Math.PI * radio;
+    }
+}
+
+// Clase Rectangulo que encapsula base y altura (dos datos primitivos double)
+public class Rectangulo
+{
+    private double baseRect;
+    private double altura;
+
+    // Constructor: crea un rectángulo con su base y altura
+    public Rectangulo(double baseRect, double altura)
+    {
+        this.baseRect = baseRect;
+        this.altura = altura;
+    }
+
+    // CalcularArea devuelve el área del rectángulo: base * altura
+    public double CalcularArea()
+    {
+        return baseRect * altura;
+    }
+
+    // CalcularPerimetro devuelve el perímetro: 2 * (base + altura)
+    public double CalcularPerimetro()
+    {
+        return 2 * (baseRect + altura);
+    }
+}
+
+// Clase principal para probar las figuras
+public class Program
+{
+    public static void Main()
+    {
+        // Crear un objeto Circulo con radio 5
+        Circulo c = new Circulo(5);
+        Console.WriteLine("Área del círculo: " + c.CalcularArea());
+        Console.WriteLine("Perímetro del círculo: " + c.CalcularPerimetro());
+
+        // Crear un objeto Rectangulo con base 4 y altura 6
+        Rectangulo r = new Rectangulo(4, 6);
+        Console.WriteLine("Área del rectángulo: " + r.CalcularArea());
+        Console.WriteLine("Perímetro del rectángulo: " + r.CalcularPerimetro());
+    }
+}
